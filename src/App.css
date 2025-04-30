@@ -9,13 +9,16 @@
   color: white;
 }
 
-
-.ativo{
+.ativo {
   font-weight: bolder;
   color: darkred;
 }
 
-.footer-container{
+.footer-container {
   width: max-content;
   background-color: black;
+}
+
+.concluida {
+  color: green;
 }
