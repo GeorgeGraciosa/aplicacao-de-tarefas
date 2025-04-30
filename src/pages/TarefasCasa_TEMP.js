@@ -22,6 +22,16 @@ function TarefasCasa() {
     setDescricao('');
   }
 
+  function concluirTarefa(index) {
+    const tarefasAtualizadas = [...tarefasCasa];
+
+    tarefasAtualizadas[index] = {
+      ...tarefasAtualizadas[index],
+      concluida: true,
+    };
+    setTarefasCasa(tarefasAtualizadas);
+  }
+
   function iniciarEdicao(index) {
     setEditandoIndex(index);
     setTituloEditado(tarefasCasa[index].titulo);
@@ -39,20 +49,12 @@ function TarefasCasa() {
     setEditandoIndex(null);
   }
 
-  function concluirTarefa(index) {
-    const tarefasAtualizadas = [...tarefasCasa];
-
-    tarefasAtualizadas[index] = {
-      ...tarefasAtualizadas[index],
-      concluida: true,
-    };
-    setTarefasCasa(tarefasAtualizadas);
-  }
-
   function excluirTarefa(index) {
     const tarefasAtualizadas = [...tarefasCasa];
 
-    const removerTarefa = tarefasAtualizadas.filter((tarefa, i) => i !== index);
+    const removerTarefa = tarefasAtualizadas.filter(
+      (tarefa, indexTarefa) => indexTarefa !== index
+    );
 
     setTarefasCasa(removerTarefa);
   }
