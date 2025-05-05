@@ -1,24 +1,159 @@
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-family: monospace;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h3,
+h2 {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+
+strong {
+  font-size: 1.1rem;
+}
+
+.navbar-container {
+  padding: 10px;
+  background-color: #f0fff0;
+}
+
+.nav-link {
+  all: unset;
+  cursor: pointer;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.ul-container {
+  display: flex;
+  gap: 20px;
+  font-weight: 600;
+}
+
+.decoracao-barra {
+  height: 30px;
+  background-color: #3cb371;
 }
 
 .ativo {
   font-weight: bolder;
-  color: darkred;
+  color: #3cb371;
+}
+
+.body-container {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0;
+  background-color: #f0fff0;
+}
+
+.container-home {
+  background-color: #f0fff0;
+  padding: 20px;
+  border-radius: 4px;
+  border: 3px solid #3cb371;
+}
+
+.titulo-home {
+  color: #2f4f4f;
+  display: flex;
+  justify-content: center;
+}
+
+.tarefas-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: start;
+  gap: 60px;
+}
+
+.casa,
+.trabalho {
+  background-color: #3cb371;
+  color: #f0fff0;
+  padding: 0px 20px;
+  border: 3px solid #3cb371;
+  border-radius: 4px;
+  transition: transform 0.2s ease;
+}
+
+.casa li,
+.trabalho li {
+  margin: 8px;
+  padding: 4px;
+  border-radius: 4px;
+  white-space: nowrap;
+  list-style: disc;
+}
+
+.casa:hover,
+.trabalho:hover {
+  background-color: #f0fff0;
+  color: #2f4f4f;
+  transform: scale(1.1);
+}
+
+.bar-link:hover,
+.nav-link li:hover,
+.nav-titulo:hover {
+  transform: scale(1.025);
+  color: #3cb371;
+}
+
+.divisor {
+  height: 4px;
+  margin: 40px 0;
+  background-color: #f0f0f0;
+}
+
+.divisor-home {
+  height: 4px;
+  margin: 40px 0;
+  background-color: #3cb371;
+}
+
+.concluidas-home-container {
+  background-color: #3cb371;
+  color: #f0fff0;
+  border-radius: 4px;
+}
+
+.concluidas-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-bottom: 10px;
+}
+
+.concluida-home {
+  display: grid;
+  justify-content: center;
+}
+
+.concluida-home li {
+  margin: 8px;
+  padding: 6px 8px;
+  border-radius: 4px;
+  border: 2px solid #f0fff0;
 }
 
 .footer-container {
-  width: max-content;
-  background-color: black;
-}
-
-.concluida {
-  color: green;
+  height: 30px;
+  background-color: #434343;
 }

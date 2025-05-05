@@ -1,8 +1,8 @@
 import { useContext, useState } from 'react';
 import { TarefasContexto } from '../context/TarefasContexto';
 
-function TarefasTrabalho() {
-  const { tarefasTrabalho, setTarefasTrabalho } = useContext(TarefasContexto);
+function TarefasCasa() {
+  const { tarefasCasa, setTarefasCasa } = useContext(TarefasContexto);
   const [novaTarefa, setNovaTarefa] = useState('');
   const [descricao, setDescricao] = useState('');
   const [editandoId, setEditandoId] = useState(null);
@@ -18,8 +18,7 @@ function TarefasTrabalho() {
       descricao,
       concluida: false,
     };
-
-    setTarefasTrabalho([...tarefasTrabalho, nova]);
+    setTarefasCasa([...tarefasCasa, nova]);
     setNovaTarefa('');
     setDescricao('');
   }
@@ -30,56 +29,58 @@ function TarefasTrabalho() {
   }
 
   function concluirTarefa(id) {
-    const tarefaAtualizada = tarefasTrabalho.map((tarefa) =>
+    const tarefasAtualizadas = tarefasCasa.map((tarefa) =>
       tarefa.id === id ? { ...tarefa, concluida: true } : tarefa
     );
 
-    setTarefasTrabalho(tarefaAtualizada);
+    setTarefasCasa(tarefasAtualizadas);
   }
 
   function iniciarEdicao(id) {
-    const tarefaAtualizada = tarefasTrabalho.find((tarefa) => tarefa.id === id);
-
-    setEditandoId(id);
-    setTituloEditado(tarefaAtualizada.titulo);
-    setDescricaoEditada(tarefaAtualizada.descricao);
+    const tarefaAtualizada = tarefasCasa.find((tarefa) => tarefa.id === id);
+    if (tarefaAtualizada) {
+      setEditandoId(id);
+      setTituloEditado(tarefaAtualizada.titulo);
+      setDescricaoEditada(tarefaAtualizada.descricao);
+    }
   }
 
   function salvarEdicao(id) {
-    const tarefaAtualizada = tarefasTrabalho.map((tarefa) =>
+    const tarefaAtualizada = tarefasCasa.map((tarefa) =>
       tarefa.id === id
         ? { ...tarefa, titulo: tituloEditado, descricao: descricaoEditada }
         : tarefa
     );
 
-    setTarefasTrabalho(tarefaAtualizada);
+    setTarefasCasa(tarefaAtualizada);
     setEditandoId(null);
   }
 
   function excluirTarefa(id) {
-    const removerTarefa = tarefasTrabalho.filter((tarefa) => tarefa.id !== id);
+    const removerTarefa = tarefasCasa.filter((tarefa) => tarefa.id !== id);
 
-    setTarefasTrabalho(removerTarefa);
+    setTarefasCasa(removerTarefa);
   }
 
   function limparConcluidos() {
-    const limparLista = tarefasTrabalho.filter((tarefa) => !tarefa.concluida);
+    const limparLista = tarefasCasa.filter((tarefa) => !tarefa.concluida);
 
-    setTarefasTrabalho(limparLista);
+    setTarefasCasa(limparLista);
   }
 
   return (
-    <div className='trabalho-container'>
+    <div className='casa-container'>
       <input
-        value={novaTarefa}
         placeholder='Insira a tarefa aqui'
+        value={novaTarefa}
         onChange={(e) => setNovaTarefa(e.target.value)}
         required
-      />{' '}
+      />
+      {''}
       <br />
       <input
+        placeholder='Insira a descrição da tarefa aqui'
         value={descricao}
-        placeholder='Insira a descrição da tarefa'
         onChange={(e) => setDescricao(e.target.value)}
       />
       <div>
@@ -90,12 +91,12 @@ function TarefasTrabalho() {
       </div>
       <div>
         <>
-          <h2>Tarefas do Trabalho:</h2>
+          <h2>Tarefas de Casa:</h2>
           <ul>
-            {tarefasTrabalho
+            {tarefasCasa
               .filter((tarefa) => !tarefa.concluida)
               .map((tarefa) => (
-                <div className='tarefa-container' key={tarefa.id}>
+                <div className='tarefa-container'>
                   {editandoId === tarefa.id ? (
                     <>
                       <input
@@ -115,7 +116,7 @@ function TarefasTrabalho() {
                     </>
                   ) : (
                     <>
-                      <li className={tarefa.concluida ? 'concluida' : ''}>
+                      <li key={tarefa.id}>
                         <strong>{tarefa.titulo}</strong> <br />{' '}
                         {tarefa.descricao}
                       </li>
@@ -134,25 +135,22 @@ function TarefasTrabalho() {
               ))}
           </ul>
           <div className='divisor'></div>
-          <div>
-            <>
-              <h2>Tarefas Concluidas:</h2>
-              <ul>
-                {tarefasTrabalho
-                  .filter((tarefa) => tarefa.concluida)
-                  .map((tarefa) => (
-                    <li className='concluida' key={tarefa.id}>
-                      <strong>{tarefa.titulo}</strong> <br /> {tarefa.descricao}
-                    </li>
-                  ))}
-              </ul>
-              {tarefasTrabalho.filter((tarefa) => tarefa.concluida).length >
-                0 && <button onClick={limparConcluidos}>Limpar Lista</button>}
-            </>
-          </div>
+          <h2>Tarefas Concluidas:</h2>
+          <ul>
+            {tarefasCasa
+              .filter((tarefa) => tarefa.concluida)
+              .map((tarefa) => (
+                <li className='concluida' key={tarefa.id}>
+                  <strong>{tarefa.titulo}</strong> <br /> {tarefa.descricao}{' '}
+                </li>
+              ))}
+          </ul>
+          {tarefasCasa.filter((tarefa) => tarefa.concluida).length > 0 && (
+            <button onClick={limparConcluidos}>Limpar Lista</button>
+          )}
         </>
       </div>
     </div>
   );
 }
-export default TarefasTrabalho;
+export default TarefasCasa;
