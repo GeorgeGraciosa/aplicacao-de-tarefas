@@ -83,13 +83,19 @@ function TarefasCasa() {
         value={descricao}
         onChange={(e) => setDescricao(e.target.value)}
       />
-      <div>
-        <button onClick={adicionarTarefa} disabled={!novaTarefa.trim()}>
+      <div className='input-button'>
+        <button
+          className='adicionar'
+          onClick={adicionarTarefa}
+          disabled={!novaTarefa.trim()}
+        >
           Adicionar
         </button>
-        <button onClick={limparTarefa}>Limpar</button>
+        <button className='limpar' onClick={limparTarefa}>
+          Limpar
+        </button>
       </div>
-      <div>
+      <div className='tarefa-casa-container'>
         <>
           <h2>Tarefas de Casa:</h2>
           <ul>

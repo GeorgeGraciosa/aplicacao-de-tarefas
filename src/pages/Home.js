@@ -20,8 +20,11 @@ function Home() {
                     .filter((tarefa) => !tarefa.concluida)
                     .map((tarefa, index) => (
                       <li key={index}>
-                        <strong>{tarefa.titulo}</strong> <br />{' '}
-                        {tarefa.descricao}
+                        <strong>
+                          {tarefa.titulo.charAt(0).toUpperCase() +
+                            tarefa.titulo.slice(1).toLowerCase()}
+                        </strong>{' '}
+                        <br /> {tarefa.descricao.toLowerCase()}
                       </li>
                     ))}
                 </ul>
@@ -36,8 +39,11 @@ function Home() {
                     .filter((tarefa) => !tarefa.concluida)
                     .map((tarefa, index) => (
                       <li key={index}>
-                        <strong>{tarefa.titulo}</strong> <br />{' '}
-                        {tarefa.descricao}
+                        <strong>
+                          {tarefa.titulo.charAt(0).toUpperCase() +
+                            tarefa.titulo.slice(1).toLowerCase()}
+                        </strong>{' '}
+                        <br /> {tarefa.descricao.toLowerCase()}
                       </li>
                     ))}
                 </ul>
@@ -58,7 +64,11 @@ function Home() {
                   .filter((tarefa) => tarefa.concluida)
                   .map((tarefa) => (
                     <li className='concluida' key={tarefa.id}>
-                      <strong>{tarefa.titulo}</strong> <br /> {tarefa.descricao}
+                      <strong>
+                        {tarefa.titulo.charAt(0).toUpperCase() +
+                          tarefa.titulo.slice(1).toLowerCase()}
+                      </strong>{' '}
+                      <br /> {tarefa.descricao}
                     </li>
                   ))}
               </ul>
@@ -70,7 +80,11 @@ function Home() {
                   .filter((tarefa) => tarefa.concluida)
                   .map((tarefa) => (
                     <li className='concluida' key={tarefa.id}>
-                      <strong>{tarefa.titulo}</strong> <br /> {tarefa.descricao}
+                      <strong>
+                        {tarefa.titulo.charAt(0).toUpperCase() +
+                          tarefa.titulo.slice(1).toLowerCase()}
+                      </strong>{' '}
+                      <br /> {tarefa.descricao.toLowerCase()}
                     </li>
                   ))}
               </ul>
