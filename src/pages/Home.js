@@ -92,9 +92,6 @@ function Home() {
           </div>
         </div>
       </div>
-      <footer>
-        <div className='footer-container'></div>
-      </footer>
     </>
   );
 }

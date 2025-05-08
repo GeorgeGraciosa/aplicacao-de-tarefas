@@ -1,0 +1,32 @@
+.navbar-container {
+  padding: 10px;
+  background-color: #f0fff0;
+}
+
+.nav-link {
+  all: unset;
+  cursor: pointer;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.ul-container {
+  display: flex;
+  gap: 20px;
+  font-weight: 600;
+}
+
+.decoracao-barra {
+  height: 30px;
+  background-color: #3cb371;
+}
+
+.ativo {
+  font-weight: bolder;
+  color: #3cb371;
+}

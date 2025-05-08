@@ -1,4 +1,4 @@
-import { useContext, useState } from 'react';
+import { useContext, useState, useRef, useEffect } from 'react';
 import { TarefasContexto } from '../context/TarefasContexto';
 
 function TarefasCasa() {
@@ -8,6 +8,11 @@ function TarefasCasa() {
   const [editandoId, setEditandoId] = useState(null);
   const [tituloEditado, setTituloEditado] = useState('');
   const [descricaoEditada, setDescricaoEditada] = useState('');
+  const inputRef = useRef(null);
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
 
   function adicionarTarefa() {
     if (novaTarefa.trim() === '') return;
@@ -74,6 +79,7 @@ function TarefasCasa() {
         placeholder='Insira a tarefa aqui'
         value={novaTarefa}
         onChange={(e) => setNovaTarefa(e.target.value)}
+        ref={inputRef}
         required
       />
       {''}
@@ -97,7 +103,7 @@ function TarefasCasa() {
       </div>
       <div className='tarefa-casa-container'>
         <>
-          <h2>Tarefas de Casa:</h2>
+          <h2>Tarefas de Casa</h2>
           <ul>
             {tarefasCasa
               .filter((tarefa) => !tarefa.concluida)
@@ -113,27 +119,43 @@ function TarefasCasa() {
                         value={descricaoEditada}
                         onChange={(e) => setDescricaoEditada(e.target.value)}
                       />
-                      <button onClick={() => salvarEdicao(tarefa.id)}>
+                      <button
+                        className='button-salvar'
+                        onClick={() => salvarEdicao(tarefa.id)}
+                      >
                         Salvar
                       </button>
-                      <button onClick={() => setEditandoId(null)}>
+                      <button
+                        className='button-cancelar'
+                        onClick={() => setEditandoId(null)}
+                      >
                         Cancelar
                       </button>
                     </>
                   ) : (
                     <>
+                      <button
+                        aria-label='Concluir tarefas'
+                        className='button-concluir'
+                        onClick={() => concluirTarefa(tarefa.id)}
+                      ></button>
                       <li key={tarefa.id}>
                         <strong>{tarefa.titulo}</strong> <br />{' '}
                         {tarefa.descricao}
                       </li>
-                      <button onClick={() => concluirTarefa(tarefa.id)}>
-                        Concluir
+                      <button
+                        aria-label='Editar tarefa'
+                        className='button-editar'
+                        onClick={() => iniciarEdicao(tarefa.id)}
+                      >
+                        ✏️
                       </button>
-                      <button onClick={() => iniciarEdicao(tarefa.id)}>
-                        Editar
-                      </button>
-                      <button onClick={() => excluirTarefa(tarefa.id)}>
-                        Excluir
+                      <button
+                        aria-label='Excluir tarefa'
+                        className='button-excluir'
+                        onClick={() => excluirTarefa(tarefa.id)}
+                      >
+                        ❌
                       </button>
                     </>
                   )}
@@ -141,18 +163,22 @@ function TarefasCasa() {
               ))}
           </ul>
           <div className='divisor'></div>
-          <h2>Tarefas Concluidas:</h2>
-          <ul>
-            {tarefasCasa
-              .filter((tarefa) => tarefa.concluida)
-              .map((tarefa) => (
-                <li className='concluida' key={tarefa.id}>
-                  <strong>{tarefa.titulo}</strong> <br /> {tarefa.descricao}{' '}
-                </li>
-              ))}
-          </ul>
+          <h2>Tarefas Concluidas</h2>
+          <div className='tarefa-casa-concluida-container'>
+            <ul>
+              {tarefasCasa
+                .filter((tarefa) => tarefa.concluida)
+                .map((tarefa) => (
+                  <li className='concluida' key={tarefa.id}>
+                    <strong>{tarefa.titulo}</strong> <br /> {tarefa.descricao}{' '}
+                  </li>
+                ))}
+            </ul>
+          </div>
           {tarefasCasa.filter((tarefa) => tarefa.concluida).length > 0 && (
-            <button onClick={limparConcluidos}>Limpar Lista</button>
+            <button className='limpar-lista' onClick={limparConcluidos}>
+              Limpar Lista
+            </button>
           )}
         </>
       </div>
