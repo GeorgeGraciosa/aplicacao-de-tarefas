@@ -1,8 +1,8 @@
 
-![Captura de tela 2025-05-06 220407](https://github.com/user-attachments/assets/f9e0e52d-ebd1-4259-92b6-f74c6cefac02)
-
 
 ![Captura de tela 2025-05-07 223942](https://github.com/user-attachments/assets/9db05477-73bd-49fd-923e-ea55d7db5dc7)
+
+![Captura de tela 2025-05-07 224124](https://github.com/user-attachments/assets/118005c6-bca0-444e-a149-497f0537361b)
 
 # Lista de Tarefas - Organização Pessoal
 
