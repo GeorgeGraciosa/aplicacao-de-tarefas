@@ -1,3 +1,9 @@
+
+![Captura de tela 2025-05-06 220407](https://github.com/user-attachments/assets/f9e0e52d-ebd1-4259-92b6-f74c6cefac02)
+
+
+![Captura de tela 2025-05-07 223942](https://github.com/user-attachments/assets/9db05477-73bd-49fd-923e-ea55d7db5dc7)
+
 # Lista de Tarefas - Organização Pessoal
 
 Este projeto é uma aplicação desenvolvida com React para o gerenciamento de tarefas pessoais, com foco em separação entre tarefas de casa e tarefas relacionadas ao trabalho. A aplicação foi projetada com ênfase em usabilidade, organização de código e boas práticas de desenvolvimento front-end.
