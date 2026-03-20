@@ -1,6 +1,7 @@
 .navbar-container {
   padding: 10px;
-  background-color: #f0fff0;
+  background-color: #2f4f4f;
+  color: #f0fff0;
 }
 
 .nav-link {
@@ -22,8 +23,8 @@
 }
 
 .decoracao-barra {
-  height: 30px;
-  background-color: #3cb371;
+  height: 3px;
+  background-color: #f0fff0;
 }
 
 .ativo {

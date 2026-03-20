@@ -3,7 +3,7 @@
   display: grid;
   justify-content: center;
   align-items: start;
-  background-color: #f0fff0;
+  background-color: #333;
 }
 
 .trabalho-container input {
@@ -27,9 +27,8 @@
 
 .input-button .adicionar:hover:not(:disabled),
 .input-button .limpar:hover {
-  transform: scale(1.25);
+  transform: scale(1.08);
   cursor: pointer;
-  color: #2f4f4f;
 }
 
 button:disabled {
@@ -43,12 +42,13 @@ button:disabled {
   margin-top: 30px;
   padding: 30px 60px;
   border: 2px solid #3cb371;
+  background-color: #f0fff0;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .divisor {
-  background-color: #3cb371;
+  background-color: #2f4f4f;
   height: 1px;
   width: 250px;
 }
@@ -66,14 +66,13 @@ button:disabled {
   width: 20px;
   border-radius: 50%;
   background-color: #f0fff0;
-  border: 2px solid #3cb371;
+  border: 2px solid #2f4f4f;
   cursor: pointer;
   transition: transform 0.3s ease;
 }
 
 .button-concluir:hover {
-  transform: scale(1.1);
-  background-color: #3cb371;
+  background-color: #2f4f4f;
 }
 
 .button-editar {
@@ -87,10 +86,6 @@ button:disabled {
   cursor: pointer;
   background-color: transparent;
   transition: transform 0.2s ease;
-}
-
-.button-editar:hover {
-  transform: scale(1.2);
 }
 
 .button-excluir {
@@ -107,10 +102,6 @@ button:disabled {
   transition: transform 0.2s ease;
 }
 
-.button-excluir:hover {
-  transform: scale(1.2);
-}
-
 .tarefa-container input {
   padding: 2px 2px;
 }
@@ -122,7 +113,7 @@ button:disabled {
   height: 30px;
   width: 70px;
   color: #f0fff0;
-  background-color: #3cb371;
+  background-color: #2f4f4f;
   border: transparent;
   border-radius: 4px;
   transition: transform 0.2s ease;
@@ -130,8 +121,7 @@ button:disabled {
 }
 
 .tarefa-container .button-salvar:hover {
-  transform: scale(1.1);
-  color: #2f4f4f;
+  color: #f0fff0;
 }
 
 .tarefa-container .button-cancelar {
@@ -150,7 +140,6 @@ button:disabled {
 }
 
 .tarefa-container .button-cancelar:hover {
-  transform: scale(1.1);
   color: #000;
 }
 
@@ -170,14 +159,12 @@ button:disabled {
   margin-top: 16px;
   color: #f0fff0;
   padding: 8px 16px;
-  background-color: #3cb371;
+  background-color: #2f4f4f;
   border: 2px solid #f0fff0;
   border-radius: 4px;
   transition: transform 0.3s ease;
 }
 
 .limpar-lista:hover {
-  transform: scale(1.1);
   cursor: pointer;
-  color: #2f4f4f;
 }
