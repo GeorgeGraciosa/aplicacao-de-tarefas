@@ -3,19 +3,19 @@
   justify-content: center;
   align-items: center;
   padding: 40px 0;
-  background-color: #f0fff0;
+  background-color: #333;
 }
 
 .container-home {
-  background-color: #f0fff0;
+  background-color: #2f4f4f;
   padding: 20px;
   border-radius: 4px;
-  border: 3px solid #3cb371;
+  border: 3px solid #f0fff0;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .titulo-home {
-  color: #2f4f4f;
+  color: #f0fff0;
   display: flex;
   justify-content: center;
 }
@@ -30,10 +30,10 @@
 
 .casa,
 .trabalho {
-  background-color: #3cb371;
+  background-color: #2f4f4f;
   color: #f0fff0;
   padding: 0px 20px;
-  border: 3px solid #3cb371;
+  border: 3px solid #2f4f4f;
   border-radius: 4px;
   transition: transform 0.2s ease;
 }
@@ -49,13 +49,12 @@
 
 .casa:hover,
 .trabalho:hover {
-  background-color: #f0fff0;
-  color: #2f4f4f;
-  transform: scale(1.1);
+  transform: scale(1.025);
 }
 
 .bar-link:hover,
-.nav-link li:hover,
+.casa:hover,
+.trabalho:hover,
 .nav-titulo:hover {
   transform: scale(1.025);
   color: #3cb371;
@@ -70,12 +69,12 @@
 .divisor-home {
   height: 2px;
   margin: 40px 0;
-  background-color: #3cb371;
+  background-color: #2f4f4f;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
 .concluidas-home-container {
-  background-color: #3cb371;
+  background-color: #2f4f4f;
   color: #f0fff0;
   border-radius: 4px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
@@ -106,5 +105,3 @@
 .concluida-home li:hover {
   background-color: #e8f5e9;
 }
-
-
